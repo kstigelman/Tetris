@@ -42,7 +42,7 @@ impl Tetromino {
 
         let mut rng = thread_rng ();
 
-        match rng.gen_range (1, 7) {
+        match rng.gen_range (1, 8) {
             1 => {
                 blocks[0] = Block {x: 0, y: -1};
                 blocks[1] = Block {x: 0, y: 0};
@@ -90,6 +90,14 @@ impl Tetromino {
                 blocks[3] = Block {x: -1, y: 1};
 
                 color =[0.0, 1.0, 1.0, 1.0];
+            }
+            7 => {
+                blocks[0] = Block {x: 1, y: 0};
+                blocks[1] = Block {x: 0, y: 0};
+                blocks[2] = Block {x: -1, y: 0};
+                blocks[3] = Block {x: 0, y: 1};
+
+                color =[0.25, 0.75, 0.25, 1.0];
             }
             _ => {
                 color =[1.0, 0.0, 0.0, 1.0];
